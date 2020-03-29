@@ -24,7 +24,7 @@ const Home = () => (
           <a href='/'>Homepage</a>
         </li>
         <li>
-          <a href='#product-information'>Product Introduction</a>
+          <a href='#product'>Product Introduction</a>
         </li>
         <li>
           <a href='#contact-us'>Contact Us</a>
@@ -61,9 +61,7 @@ const Home = () => (
         </HeroGrid>
       </HeroSection>
       <ProductSection>
-        <SectionTitle id='product-introduction'>
-          Product Introduction
-        </SectionTitle>
+        <SectionTitle id='product'>Product Introduction</SectionTitle>
         <ImageRow>
           <ImageCard src='/placeholder.jpg' />
           <Content>
