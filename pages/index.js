@@ -12,6 +12,10 @@ const Home = () => (
   <div>
     <Head>
       <title>Get Restock!</title>
+      <meta name='description' content='Sample description' />
+      <meta property='og:title' content='Get Restock!' />
+      <meta property='og:description' content='Sample description' />
+      <meta property='og:image' content='/logo.png' />
       <link rel='icon' href='/favicon.ico' />
     </Head>
 
@@ -145,8 +149,8 @@ export default Home;
 const Container = styled.div.attrs(props => {
   if (props.slim) {
     return {
-      width: '60%',
-      maxWidth: '800px'
+      width: '65%',
+      maxWidth: '900px'
     };
   }
 
@@ -287,7 +291,7 @@ const HeroSection = styled.section`
       height: 110vh;
       z-index: -1;
       border-radius: 75px;
-      transform: rotate(-15deg) translate3d(-10vw, -65vh, 0);
+      transform: rotate(-15deg) translate3d(-10vw, -62vh, 0);
 
       background: ${({ theme }) =>
         `linear-gradient(
