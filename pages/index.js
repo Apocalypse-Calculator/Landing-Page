@@ -1,15 +1,11 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-
-import AndroidLight from '../icons/android-light.svg';
-import IOSLight from '../icons/ios-light.svg';
-import WebLight from '../icons/web-light.svg';
-import Android from '../icons/android.svg';
-import IOS from '../icons/ios.svg';
-import Web from '../icons/web.svg';
+import { theme } from '../styles/theme';
+import { Underline, Button } from '../styles/parts';
+import { up, down } from 'styled-breakpoints';
 
 const Home = () => (
-  <div>
+  <Page>
     <Head>
       <title>Get Restock!</title>
       <meta name='description' content='Sample description' />
@@ -19,431 +15,564 @@ const Home = () => (
       <link rel='icon' href='/favicon.ico' />
     </Head>
 
-    <Navigation as='nav'>
-      <a href='/'>
-        <img src='/logo-light.png' alt='Restock Logo' />
-      </a>
-      <ul>
-        <li>
-          <a href='/'>Homepage</a>
-        </li>
-        <li>
-          <a href='#product'>Product Introduction</a>
-        </li>
-        <li>
-          <a href='#contact-us'>Contact Us</a>
-        </li>
-        <li>
-          <a href='#webapp'>Webapp</a>
-        </li>
-      </ul>
-    </Navigation>
+    <Header>
+      <nav>
+        <div id='brand'>
+          <a href='/'>
+            <img src='/images/logo.png' alt='' />
+          </a>
+        </div>
+        <ul>
+          <li>
+            <a href='#'>About</a>
+          </li>
+          <li>
+            <a href='#'>How to Use</a>
+          </li>
+          <li>
+            <a href='#'>Download</a>
+          </li>
+          <li>
+            <a href='#'>Contact Us</a>
+          </li>
+        </ul>
+      </nav>
 
-    <Container as='main' slim>
-      <HeroSection>
-        <HeroGrid>
-          <h1>Here is the slogan or mission of our product</h1>
-          <div className='download'>
-            <div>
-              <WebLight />
-              <Button light>Open</Button>
-            </div>
-            <div>
-              <IOSLight />
-              <Button light>Download</Button>
-            </div>
-            <div>
-              <AndroidLight />
-              <Button light>Download</Button>
-            </div>
-          </div>
-          <img
-            style={{ width: 350, height: 400, objectFit: 'cover' }}
-            src='/placeholder.jpg'
-            alt=''
-          />
-        </HeroGrid>
-      </HeroSection>
-      <ProductSection>
-        <SectionTitle id='product'>Product Introduction</SectionTitle>
-        <ImageRow>
-          <ImageCard src='/placeholder.jpg' />
-          <Content>
-            <h3>Keep your shelves stocked with the amount you need</h3>
-            <p>some detailed explanations of this part</p>
-          </Content>
-        </ImageRow>
-        <ImageRow>
-          <Content>
-            <h3>Reduce the stress of worrying if you have enough supplies</h3>
-            <p>some detailed explanations of this part</p>
-          </Content>
-          <ImageCard src='/placeholder.jpg' />
-        </ImageRow>
-        <ImageRow>
-          <ImageCard src='/placeholder.jpg' />
-          <Content>
-            <h3>Easy to use, simple, user friendly</h3>
-            <p>some detailed explanations of this part</p>
-          </Content>
-        </ImageRow>
-      </ProductSection>
-      <ContactSection>
-        <SectionTitle id='contact-us'>Contact Us</SectionTitle>
-        <p>here is the introduction of our team, our mission and so on</p>
-        <p>
-          Please do not hesitate to let us know if you have any comments or is
-          you want to cooperate with us
-        </p>
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-          }}
-        >
-          <label htmlFor='email'>
-            <img src='/placeholder.jpg' alt='' />
-            <input type='text' name='email' placeholder='input your email' />
-          </label>
-
-          <label htmlFor='message'>
-            <img src='/placeholder.jpg' alt='' />
-            <input
-              type='text'
-              name='message'
-              placeholder='input your comments'
-            />
-          </label>
-        </form>
-      </ContactSection>
-      <WebappSection>
-        <SectionTitle id='webapp'>Webapp</SectionTitle>
-        <p>
-          It’s easy to use Restock on web directly or you can download the app
-        </p>
-        <div className='download'>
+      <Hero id='hero'>
+        <h1>
+          Bring back your shelf confidence with this easy stock calculator!
+        </h1>
+        <div className='row'>
           <div>
-            <Web />
-            <Button>Open</Button>
+            <img src='/images/web_light.png' alt='' />
+            <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <IOS />
-            <Button>Download</Button>
+            <img src='/images/apple_light.png' alt='' />
+            <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <Android />
-            <Button>Download</Button>
+            <img src='/images/android_light.png' alt='' />
+            <Button as='a' href='#'>
+              Download
+            </Button>
           </div>
         </div>
-      </WebappSection>
-    </Container>
-
+        <img src='/images/phone.png' alt='demo' />
+      </Hero>
+    </Header>
+    <About id='about'>
+      <header>
+        <p>Concerned about your shelf stock?</p>
+        <p>Do you have everything you need in your cupboards?</p>
+        <h2>
+          <Underline>ReStock Can Help!</Underline>
+        </h2>
+        <p>
+          It's time to shelf care. Take the worry out of stocking your shelves
+          with ReStock. This free, <Underline>easy to use app</Underline> works
+          out how much you will need of an essential item over a set time
+          period.
+        </p>
+      </header>
+      <div className='row'>
+        <img src='/images/shelves.png' alt='' />
+        <p>
+          Keep your shelves stocked with the{' '}
+          <Underline>amount you need</Underline>
+        </p>
+      </div>
+      <div className='row reverse'>
+        <p>
+          <Underline>Reduce the stress of worrying</Underline> if you have
+          enough supplies
+        </p>
+        <img src='/images/peace_of_mind.png' alt='' />
+      </div>
+    </About>
+    <HowToUse id='how-to-use' height={400}>
+      <video width='100%' autoplay muted loop controls={false}>
+        <source src='/video/preview.mp4' type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+      <div>
+        <p>
+          How does it work? <Underline>It's easy</Underline>
+        </p>
+        <ol>
+          <li>Choose your essential item i.e. Hand Sanitizer</li>
+          <li>Enter how many days you need the item to last</li>
+          <li>Enter how much you have i.e. 2 bottles</li>
+          <li>Enter how many people will also be using the item</li>
+        </ol>
+      </div>
+    </HowToUse>
+    <Download id='download'>
+      <div className='wrapper'>
+        <h2>Get prepared and ReStock now!</h2>
+        <div className='row'>
+          <div>
+            <img src='/images/desktop.png' alt='' />
+            <Button disable>Coming Soon</Button>
+          </div>
+          <div>
+            <img src='/images/apple.png' alt='' />
+            <Button disable>Coming Soon</Button>
+          </div>
+          <div>
+            <img src='/images/android.png' alt='' />
+            <Button as='a' href='#'>
+              Download
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Download>
+    <OurTeam id='our-team'>
+      <h2>Our Team</h2>
+      <ul>
+        <li>Roland Zonai</li>
+        <li>Jack Attewell</li>
+        <li>Zach Lawrence</li>
+        <li>Jon Powers</li>
+        <li>Daisy Simonis</li>
+        <li>Ahmed ElNahas</li>
+        <li>Xiangyang Huang</li>
+        <li>JinYi Yang</li>
+        <li>Emily Kondziola</li>
+        <li>Anna Shannon</li>
+        <li>Yegor Golovnia</li>
+        <li>Margaret Beardsley</li>
+        <li>Ankit Joshi</li>
+      </ul>
+    </OurTeam>
+    <ContactUs id='contact-us'>
+      <h2>
+        <img src='/images/contact.png' alt='' />
+        Contact Us
+      </h2>
+      <p>
+        Have a question or want to know more? <br /> Our volunteer team is here
+        to help, so please do fill in the contact form below!
+      </p>
+      <form>
+        <input type='email' name='email' placeholder='Email Address' />
+        <input type='text' name='subject' placeholder='Subject' />
+        <textarea rows={4} name='comments' placeholder='Comments' />
+        <input type='submit' value='Submit' />
+      </form>
+    </ContactUs>
     <Footer>
-      <Container>
-        <p>something else, such as the archival information</p>
-      </Container>
+      <h3>It's time to bring back your shelf-confidence</h3>
     </Footer>
-  </div>
+  </Page>
 );
+
 export default Home;
 
-const Container = styled.div.attrs(props => {
-  if (props.slim) {
-    return {
-      width: '65%',
-      maxWidth: '900px'
-    };
+const HowToUse = styled.section`
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 4fr;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  ${up('tablet')} {
+    margin-bottom: 40px;
+    /* font-size: 0.85em; */
+
+    video {
+      height: 100%;
+    }
   }
 
-  return {
-    width: '80%',
-    maxWidth: '1280px'
-  };
-})`
-  @media (min-width: 768px) {
-    width: ${props => props.width};
-    max-width: ${props => props.maxWidth};
-    margin-left: auto;
-    margin-right: auto;
+  ol {
+    padding-left: 20px;
   }
 `;
+const Download = styled.section`
+  background: ${theme.colors.secondary};
+  color: white;
+  text-align: center;
 
-const Navigation = styled(Container)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  img {
-    margin: 20px 0;
-    height: 100px;
+  ${up('tablet')} {
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+    padding-top: 150px;
+    height: 600px;
+    background-color: transparent;
+    background-image: url('/shapes/orange_bottom.png');
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
+
+  div.wrapper {
+    ${up('desktop')} {
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2,
+      .row {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .row {
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    ${up('tablet')} {
+      width: 60%;
+      margin: 0 auto;
+    }
+    ${up('desktop')} {
+      width: 80%;
+      margin: 0;
+    }
+    & > div {
+      width: 150px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      ${up('tablet')} {
+        width: auto;
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-bottom: 20px;
+      }
+    }
+  }
+`;
+const OurTeam = styled.section`
+  color: ${theme.colors.body};
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
 
   ul {
     list-style: none;
-    display: flex;
-    align-items: center;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18ch, auto));
 
     li {
-      margin: 0 10px;
-      &:first-of-type {
-        font-size: 1.25em;
-      }
-
-      &.active,
-      &:hover {
-        a {
-          border-bottom: 2px solid white;
-        }
-      }
-
-      a {
-        padding: 2px 0;
-        color: white;
-        text-decoration: none;
-      }
+      padding: 0.25em 0;
     }
   }
 `;
 
-const Section = styled.section`
-  padding: 20px;
-`;
+const ContactUs = styled.section`
+  color: ${theme.colors.body};
+  padding-bottom: 40px;
+  background: #efeeee;
 
-const SectionTitle = styled.h2`
-  margin: 40px 0;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.primaryLight};
-
-  &::before,
-  &::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.primaryLight};
-  }
-  &::before {
-    margin-right: 2em;
-  }
-  &::after {
-    margin-left: 2em;
-  }
-`;
-
-const Content = styled.div`
-  font-size: 24px;
-  padding: 20px;
-
-  @media (min-width: 768px) {
-  }
-`;
-
-const ImageCard = styled.img`
-  border-radius: 20px;
-  width: 250px;
-  height: 200px;
-  object-fit: cover;
-`;
-
-const ImageRow = styled.div`
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 767px) {
-    ${Content} {
-      order: 1;
-    }
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-
-    ${Content}, ${ImageCard} {
-      width: 50%;
-      margin: 0 20px;
-    }
-  }
-`;
-
-const HeroSection = styled.section`
-  color: white;
-
-  @media (max-width: 767px) {
-    background: ${({ theme }) =>
-      `linear-gradient(
-        to right, 
-        ${theme.colors.primaryLight}, 
-        ${theme.colors.primary}
-        )`};
-  }
-
-  @media (min-width: 768px) {
-    position: relative;
-    height: 80vh;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 95vw;
-      height: 110vh;
-      z-index: -1;
-      border-radius: 75px;
-      transform: rotate(-15deg) translate3d(-10vw, -62vh, 0);
-
-      background: ${({ theme }) =>
-        `linear-gradient(
-        to right, 
-        ${theme.colors.primaryLight}, 
-        ${theme.colors.primary}
-        )`};
-    }
-  }
-`;
-
-const HeroGrid = styled.div`
-  padding: 40px;
-  display: grid;
-  grid-gap: 40px;
-  @media (min-width: 768px) {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 2fr;
-  }
-
-  h1 {
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 1.5;
-
-    @media (min-width: 768px) {
-      grid-column: 1 / 2;
-      grid-row: 1;
-    }
-  }
-  div.download {
-    @media (min-width: 768px) {
-      grid-column: 1 / 2;
-      grid-row: 2;
-    }
-
+  h2 {
+    color: ${theme.colors.header};
     display: flex;
     align-items: center;
     justify-content: center;
 
-    @media (min-width: 768px) {
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-
-    & > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      margin-right: 20px;
-
-      svg {
-        margin: 10px 0;
-      }
+    img {
+      height: 1.25em;
+      margin-right: 0.5em;
     }
   }
-  img {
-    @media (min-width: 768px) {
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
-    }
-  }
-`;
 
-const ContactSection = styled(Section)`
   p {
-    text-align: center;
+    ${up('tablet')} {
+      text-align: center;
+    }
   }
 
   form {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: 0 auto;
 
-    label {
-      width: 90%;
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
+    ${up('tablet')} {
+      max-width: 60ch;
+      margin: 0 auto;
+    }
 
-      img,
-      input {
-        height: 50px;
+    input,
+    textarea {
+      appearance: none;
+      outline: none;
+      border: none;
+      resize: none;
+      width: 100%;
+      margin: 0.5em 0;
+      padding: 0.5em;
+
+      border: 1px solid #55555580;
+      font-size: 0.9rem;
+
+      &::placeholder {
+        color: #555;
+        font-size: 0.85em;
+        font-family: sans-serif;
       }
+    }
 
-      img {
-        width: 60px;
-        margin-right: 20px;
-        object-fit: cover;
-      }
+    input[type='submit'] {
+      background: ${theme.colors.primary};
+      color: white;
+      padding: 0.5em;
+    }
+  }
+`;
 
-      input {
+const Header = styled.header`
+  background: ${theme.colors.primary};
+  padding: 10px 30px;
+  position: relative;
+  z-index: 2;
+
+  ${up('tablet')} {
+    background-color: transparent;
+    background-image: url('/shapes/green_header.png');
+    background-size: cover;
+    background-position: 50% center;
+    background-repeat: no-repeat;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 90px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: right;
+
+      ${up('tablet')} {
         width: 100%;
-        padding: 4px 10px;
-        border: 1px solid #999;
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          margin: 0 5px;
+        }
+      }
+
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 200;
+          display: block;
+          margin: 0.5em 0;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
 `;
 
-const ProductSection = styled(Section)``;
+const Hero = styled.section`
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 
-const WebappSection = styled(Section)`
-  p {
-    text-align: center;
+  ${up('tablet')} {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'title image' 'links image';
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+
+    h1 {
+      grid-area: title;
+    }
+    & > div {
+      grid-area: links;
+    }
+
+    & > img {
+      grid-area: image;
+    }
   }
 
-  .download {
-    width: 500px;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  h1 {
+    margin: 0;
+    padding: 30px;
+    background: ${theme.colors.primary};
+    color: white;
+    text-align: center;
+
+    ${up('tablet')} {
+      background: transparent;
+    }
+  }
+
+  .row {
+    padding: 20px 30px;
+    background: white;
+
+    ${up('tablet')} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background: transparent;
+    }
 
     & > div {
+      margin: 20px 0 10px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
-      svg {
-        margin: 10px 0;
+      ${up('tablet')} {
+        margin: 20px;
+      }
+
+      img {
+        width: 80px;
+        height: 70px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  & > img {
+    display: none;
+    ${up('tablet')} {
+      display: block;
+    }
+    max-width: 250px;
+    margin: 0 auto;
+  }
+`;
+
+const About = styled.section`
+  background: ${theme.colors.secondary};
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  ${up('tablet')} {
+    margin: -200px 0;
+    padding: 200px 0;
+    margin-top: -500px;
+    background-color: transparent;
+    background-image: url('/shapes/orange_background.png');
+    background-size: 110% 100%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    width: 100vw;
+  }
+  ${up('desktop')} {
+    padding: 350px 0;
+    margin: -350px 0;
+    margin-top: -650px;
+  }
+
+  img {
+    max-width: 70%;
+    margin: 20px auto;
+  }
+
+  header {
+    ${up('tablet')} {
+      padding-top: 280px;
+      padding-bottom: 20px;
+      margin: 50px 0;
+
+      p,
+      h2 {
+        width: 80%;
+        margin: 40px auto;
+      }
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    ${up('tablet')} {
+      margin: 50px 0;
+    }
+
+    &.reverse {
+      flex-direction: column-reverse;
+      color: #333;
+    }
+
+    &,
+    &.reverse {
+      ${up('tablet')} {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+
+        p {
+          max-width: 28ch;
+          margin: 0 auto;
+        }
       }
     }
   }
 `;
 
 const Footer = styled.footer`
-  margin-top: 40px;
-  background: #efeeee;
-  padding: 20px;
+  background: ${theme.colors.primary};
+  color: white;
+  padding: 10px 20px;
   text-align: center;
 `;
 
-const Button = styled.button.attrs(props => ({
-  main: props.light ? 'white' : props.theme.colors.primary,
-  inv: props.light ? props.theme.colors.primary : 'white'
-}))`
-  border-radius: 25px;
-  background-color: transparent;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${props => props.main};
-  color: ${props => props.main};
-  padding: 6px 18px;
-  font-size: 14px;
+const Page = styled.main`
+  ${up('tablet')} {
+    font-size: 1.3em;
+  }
 
-  &:hover {
-    color: ${props => props.inv};
-    background-color: ${props => props.main};
+  ${up('desktop')} {
+    font-size: 1.5em;
   }
 `;

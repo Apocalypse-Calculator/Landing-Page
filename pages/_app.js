@@ -1,13 +1,8 @@
 import App from 'next/app';
 import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-
-const theme = {
-  colors: {
-    primary: '#00b58f',
-    primaryLight: '#00D083'
-  }
-};
+import { Normalize } from '../styles/normalize';
+import { theme } from '../styles/theme';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -29,6 +24,14 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  section {
+    padding: 20px;
+  }
+
+  img {
+    max-width: 100%;
+  }
 `;
 
 export default class MyApp extends App {
@@ -37,6 +40,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
+        <Normalize />
         <GlobalStyle />
       </ThemeProvider>
     );
