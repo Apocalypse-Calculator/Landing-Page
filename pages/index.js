@@ -12,7 +12,7 @@ import Footer from '../components/footer';
 const Home = () => (
   <Page>
     <Head>
-      <title>Get Restock!</title>
+      <title>Get ReStock!</title>
       <meta name='description' content='Sample description' />
       <meta property='og:title' content='Get Restock!' />
       <meta property='og:description' content='Sample description' />
@@ -34,10 +34,12 @@ export default Home;
 
 const Page = styled.main`
   ${up('tablet')} {
-    font-size: 1.3em;
+    h1: 1em;
+    font-size: 1em;
   }
 
   ${up('desktop')} {
+    h1: 1em;
     font-size: 1em;
   }
 `;

@@ -105,6 +105,7 @@ const Container = styled.section`
 
         p {
           max-width: 28ch;
+          font-size: 1.5em;
           margin: 0 auto;
         }
       }
