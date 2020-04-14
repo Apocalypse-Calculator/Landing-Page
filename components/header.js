@@ -30,7 +30,7 @@ const Header = () => {
 
       <Hero id='hero'>
         <h1>
-          Bring back your shelf-confidence with this easy stock calculator!
+          Bring back your shelf confidence with this easy stock calculator!
         </h1>
         <div className='row'>
           <div>
@@ -169,7 +169,7 @@ const Hero = styled.section`
       justify-content: center;
 
       ${up('tablet')} {
-        margin: 20px;
+        margin: 35px;
       }
 
       img {
