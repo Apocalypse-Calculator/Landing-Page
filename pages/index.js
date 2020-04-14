@@ -18,6 +18,7 @@ const Home = () => (
       <meta property='og:description' content='Sample description' />
       <meta property='og:image' content='/logo.png' />
       <link rel='icon' href='/favicon.ico' />
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
     </Head>
 
     <Header />

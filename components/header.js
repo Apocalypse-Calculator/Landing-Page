@@ -58,7 +58,7 @@ export default Header;
 
 const Container = styled.header`
   background: ${theme.colors.primary};
-  padding: 20px 40px;
+  padding: 20px 40px 20px 80px;
   position: relative;
   z-index: 2;
 
