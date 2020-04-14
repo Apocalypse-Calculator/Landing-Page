@@ -14,23 +14,23 @@ const Header = () => {
         </div>
         <ul>
           <li>
-            <a href='#'>About</a>
+            <a href='#'>ABOUT</a>
           </li>
           <li>
-            <a href='#'>How to Use</a>
+            <a href='#'>HOW TO USE</a>
           </li>
           <li>
-            <a href='#'>Download</a>
+            <a href='#'>DOWNLOAD</a>
           </li>
           <li>
-            <a href='#'>Contact Us</a>
+            <a href='#'>CONTACT US</a>
           </li>
         </ul>
       </nav>
 
       <Hero id='hero'>
         <h1>
-          Bring back your shelf confidence with this easy stock calculator!
+          Bring back your shelf-confidence with this easy stock calculator!
         </h1>
         <div className='row'>
           <div>
@@ -101,6 +101,7 @@ const Container = styled.header`
           font-weight: 200;
           display: block;
           margin: 0.5em 0;
+          padding: 23px;
 
           &:hover {
             text-decoration: underline;

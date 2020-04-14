@@ -13,10 +13,10 @@ const ContactUs = () => (
       help, so please do fill in the contact form below!
     </p>
     <form>
-      <input type='email' name='email' placeholder='Email Address' />
-      <input type='text' name='subject' placeholder='Subject' />
-      <textarea rows={4} name='comments' placeholder='Comments' />
-      <input type='submit' value='Submit' />
+      <input type='email' name='email' placeholder='Email Address' required/>
+      <input type='text' name='subject' placeholder='Subject' required/>
+      <textarea rows={4} name='comments' placeholder='Comments' required/>
+      <input type='submit' value='Contact us' />
     </form>
   </Container>
 );
