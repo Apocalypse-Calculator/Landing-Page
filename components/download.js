@@ -49,7 +49,7 @@ const Container = styled.section`
 
   div.wrapper {
     ${up('desktop')} {
-      max-width: 800px;
+      max-width: 700px;
       display: flex;
       flex-direction: column;
       align-items: center;

@@ -21,16 +21,16 @@ const About = () => {
       </header>
       <div className="row">
         <img src="/images/shelves.png" alt="" />
-        <p>
+        <h3>
           Keep your shelves stocked with the{" "}
           <Underline>amount you need</Underline>
-        </p>
+        </h3>
       </div>
       <div className="row reverse">
-        <p>
+        <h3>
           <Underline>Reduce the stress of worrying</Underline> if you have
           enough supplies
-        </p>
+        </h3>
         <img src="/images/peace_of_mind.png" alt="" />
       </div>
     </Container>
@@ -75,7 +75,8 @@ const Container = styled.section`
       margin: 50px 0;
 
       p,
-      h2 {
+      h2,
+      h3 {
         width: 80%;
         margin: 40px auto;
         letter-spacing: .5px;
@@ -87,7 +88,7 @@ const Container = styled.section`
 
       h2 {
     font-size: 3em;
-  }
+      }
     }
   }
 
@@ -114,7 +115,7 @@ const Container = styled.section`
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-between;
 
-        p {
+        p, h3 {
           max-width: 28ch;
           font-size: 1.5em;
           margin: 0 auto;
