@@ -19,6 +19,7 @@ const Home = () => (
       <meta property='og:image' content='/logo.png' />
       <link rel='icon' href='/favicon.ico' />
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"/>
     </Head>
 
     <Header />
@@ -35,12 +36,12 @@ export default Home;
 
 const Page = styled.main`
   ${up('tablet')} {
-    h1: 1em;
+    {/* h1: 1em; */}
     font-size: 1em;
   }
 
   ${up('desktop')} {
-    h1: 1em;
+    {/* h1: 1em; */}
     font-size: 1em;
   }
 `;

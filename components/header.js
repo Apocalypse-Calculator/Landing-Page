@@ -30,7 +30,7 @@ const Header = () => {
 
       <Hero id='hero'>
         <h1>
-          Bring back your shelf confidence with this easy stock calculator!
+          Bring back your shelf-confidence with this easy stock calculator!
         </h1>
         <div className='row'>
           <div>
@@ -143,9 +143,11 @@ const Hero = styled.section`
     background: ${theme.colors.primary};
     color: white;
     text-align: center;
+    letter-spacing: .7px;
 
     ${up('tablet')} {
       background: transparent;
+      letter-spacing: .7px;
     }
   }
 

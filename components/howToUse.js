@@ -11,9 +11,9 @@ const HowToUse = () => {
         Your browser does not support the video tag.
       </video>
       <div>
-        <p>
-          How does it work? <Underline>It's easy</Underline>
-        </p>
+        <h2>
+          How does it work? <Underline>It's easy.</Underline>
+        </h2>
         <ol>
           <li>Choose your essential item i.e. Hand Sanitizer</li>
           <li>Enter how many days you need the item to last</li>
@@ -33,6 +33,13 @@ const Container = styled.section`
   grid-template-columns: 2fr 4fr;
   max-width: 1200px;
   margin: 0 auto;
+  font-size: 1.5em;
+  letter-spacing: .5px;
+  color: ${theme.colors.text};
+
+  h2 {
+    font-size: 1.5em;
+  }
 
   ${up('tablet')} {
     margin-bottom: 40px;
@@ -44,6 +51,8 @@ const Container = styled.section`
   }
 
   ol {
-    padding-left: 20px;
+    padding-left: 30px;
+    font-size: 1em;
+    font-weight: regular;
   }
 `;

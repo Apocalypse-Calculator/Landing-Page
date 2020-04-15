@@ -1,16 +1,16 @@
-import { up } from 'styled-breakpoints';
-import styled from 'styled-components';
-import { theme } from '../styles/theme';
-import { Underline } from '../styles/parts';
+import { up } from "styled-breakpoints";
+import styled from "styled-components";
+import { theme } from "../styles/theme";
+import { Underline } from "../styles/parts";
 
 const About = () => {
   return (
-    <Container id='about'>
+    <Container id="about">
       <header>
         <p>Concerned about your shelf stock?</p>
         <p>Do you have everything you need in your cupboards?</p>
         <h2>
-          <Underline>ReStock Can Help!</Underline>
+          <Underline>ReStock can help!</Underline>
         </h2>
         <p>
           It's time to shelf care. Take the worry out of stocking your shelves
@@ -19,19 +19,19 @@ const About = () => {
           period.
         </p>
       </header>
-      <div className='row'>
-        <img src='/images/shelves.png' alt='' />
+      <div className="row">
+        <img src="/images/shelves.png" alt="" />
         <p>
-          Keep your shelves stocked with the{' '}
+          Keep your shelves stocked with the{" "}
           <Underline>amount you need</Underline>
         </p>
       </div>
-      <div className='row reverse'>
+      <div className="row reverse">
         <p>
           <Underline>Reduce the stress of worrying</Underline> if you have
           enough supplies
         </p>
-        <img src='/images/peace_of_mind.png' alt='' />
+        <img src="/images/peace_of_mind.png" alt="" />
       </div>
     </Container>
   );
@@ -44,8 +44,9 @@ const Container = styled.section`
   text-align: center;
   position: relative;
   z-index: 1;
+  letter-spacing: .5px;
 
-  ${up('tablet')} {
+  ${up("tablet")} {
     margin: -200px 0;
     padding: 200px 0;
     margin-top: -500px;
@@ -56,7 +57,7 @@ const Container = styled.section`
     background-repeat: no-repeat;
     width: 100vw;
   }
-  ${up('desktop')} {
+  ${up("desktop")} {
     padding: 350px 0;
     margin: -350px 0;
     margin-top: -650px;
@@ -68,7 +69,7 @@ const Container = styled.section`
   }
 
   header {
-    ${up('tablet')} {
+    ${up("tablet")} {
       padding-top: 280px;
       padding-bottom: 20px;
       margin: 50px 0;
@@ -77,7 +78,16 @@ const Container = styled.section`
       h2 {
         width: 80%;
         margin: 40px auto;
+        letter-spacing: .5px;
       }
+
+      p {
+        font-size: 1.5em;
+      }
+
+      h2 {
+    font-size: 3em;
+  }
     }
   }
 
@@ -87,18 +97,19 @@ const Container = styled.section`
     align-items: center;
     justify-content: space-evenly;
 
-    ${up('tablet')} {
+    ${up("tablet")} {
       margin: 50px 0;
     }
 
     &.reverse {
       flex-direction: column-reverse;
-      color: #333;
+      ${"" /* color: #333; */}
+      color: ${theme.colors.text};
     }
 
     &,
     &.reverse {
-      ${up('tablet')} {
+      ${up("tablet")} {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-between;
@@ -107,6 +118,7 @@ const Container = styled.section`
           max-width: 28ch;
           font-size: 1.5em;
           margin: 0 auto;
+          letter-spacing: .5;
         }
       }
     }

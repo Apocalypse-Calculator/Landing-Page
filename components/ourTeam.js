@@ -3,7 +3,7 @@ import { theme } from '../styles/theme';
 
 const OurTeam = () => (
   <Container id='our-team'>
-    <h2>Our Team</h2>
+    <h2>Our team</h2>
     <ul>
       <li>Roland Zonai</li>
       <li>Jack Attewell</li>
@@ -29,11 +29,16 @@ const Container = styled.section`
   text-align: center;
   max-width: 1000px;
   margin: 0 auto;
+  font-size: 1.5em;
+
+  h2 {
+    color: ${theme.colors.text};
+  }
 
   ul {
     list-style: none;
     padding: 0;
-
+    font-weight: bold;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18ch, auto));
 

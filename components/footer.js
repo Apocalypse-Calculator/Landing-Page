@@ -13,4 +13,6 @@ const Container = styled.footer`
   color: white;
   padding: 10px 20px;
   text-align: center;
+  font-size: 1.5em;
+  letter-spacing: .5px;
 `;

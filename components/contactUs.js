@@ -26,13 +26,14 @@ export default ContactUs;
 const Container = styled.section`
   color: ${theme.colors.body};
   padding-bottom: 40px;
-  background: #efeeee;
+  background: #fff;
 
   h2 {
-    color: ${theme.colors.header};
+    color: ${theme.colors.text};
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5em;
 
     img {
       height: 1.25em;
@@ -43,6 +44,8 @@ const Container = styled.section`
   p {
     ${up('tablet')} {
       text-align: center;
+      font-size: 1.5em;
+      letter-spacing: .3px;
     }
   }
 

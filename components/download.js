@@ -58,6 +58,8 @@ const Container = styled.section`
       h2,
       .row {
         max-width: 100%;
+        letter-spacing: .7px;
+        font-size: 1.5em;
       }
     }
   }
