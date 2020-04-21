@@ -70,7 +70,7 @@ const Container = styled.section`
 
   header {
     ${up("tablet")} {
-      padding-top: 300px;
+      padding-top: 350px;
       padding-bottom: 20px;
       margin: 50px auto;
       max-width: 1024px;
