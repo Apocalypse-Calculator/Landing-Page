@@ -49,7 +49,7 @@ const Container = styled.section`
   ${up("tablet")} {
     margin: -150px 0;
     padding: 250px 0;
-    margin-top: -500px;
+    margin-top: -550px;
     background-color: transparent;
     background-image: url('/shapes/orange_background.png');
     background-size: 110% 100%;
@@ -57,10 +57,10 @@ const Container = styled.section`
     background-repeat: no-repeat;
     width: 100vw;
   }
+  
   ${up("desktop")} {
-    padding: 450px 5%;
-    margin: -350px 0;
-    margin-top: -650px;
+    padding: 250px 5%;
+    margin-top: -500px;
   }
 
   img {

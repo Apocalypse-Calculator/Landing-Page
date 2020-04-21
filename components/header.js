@@ -58,22 +58,17 @@ export default Header;
 
 const Container = styled.header`
   background: ${theme.colors.primary};
-  padding: 20px 40px 20px 80px;
+  padding: 11% 40px 0 80px;
+  margin-top: -10%;
   position: relative;
   z-index: 2;
 
   ${up('tablet')} {
     background-color: transparent;
     background-image: url('/shapes/green_header.png');
-    background-size: cover;
-    background-position: 50% center;
-    background-repeat: no-repeat;    
-  }
-
-  ${up('desktop')} {
     background-size: 100% 100%;
-    padding: 11% 40px 5% 80px;
-    margin-top: -10%;
+    background-position: 50% center;
+    background-repeat: no-repeat;
   }
 
   nav {
@@ -117,8 +112,8 @@ const Container = styled.header`
     }
   }
 `;
+
 const Hero = styled.section`
-  padding: 0;
   max-width: 1200px;
   margin: 0 auto;
 
