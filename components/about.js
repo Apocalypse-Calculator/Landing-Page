@@ -47,8 +47,8 @@ const Container = styled.section`
   letter-spacing: .5px;
 
   ${up("tablet")} {
-    margin: -200px 0;
-    padding: 200px 0;
+    margin: -150px 0;
+    padding: 250px 0;
     margin-top: -500px;
     background-color: transparent;
     background-image: url('/shapes/orange_background.png');
@@ -58,31 +58,33 @@ const Container = styled.section`
     width: 100vw;
   }
   ${up("desktop")} {
-    padding: 350px 0;
+    padding: 450px 5%;
     margin: -350px 0;
     margin-top: -650px;
   }
 
   img {
     max-width: 70%;
-    margin: 20px auto;
+    margin: 3% auto;
   }
 
   header {
     ${up("tablet")} {
-      padding-top: 280px;
+      padding-top: 300px;
       padding-bottom: 20px;
-      margin: 50px 0;
-
-      p,
+      margin: 50px auto;
+      max-width: 1024px;
+      
       h2,
       h3 {
-        width: 80%;
-        margin: 40px auto;
+        width: 75%;
+        margin: 5% auto;
         letter-spacing: .5px;
       }
 
       p {
+        width: 70%;
+        margin: 3% auto;
         font-size: 1.5em;
       }
 
@@ -99,7 +101,11 @@ const Container = styled.section`
     justify-content: space-evenly;
 
     ${up("tablet")} {
-      margin: 50px 0;
+      margin: 10% 0;
+    }
+
+    ${up("desktop")} {
+      margin: 5% 2% 10px 2%;
     }
 
     &.reverse {
