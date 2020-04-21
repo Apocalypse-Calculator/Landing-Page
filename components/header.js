@@ -67,7 +67,13 @@ const Container = styled.header`
     background-image: url('/shapes/green_header.png');
     background-size: cover;
     background-position: 50% center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;    
+  }
+
+  ${up('desktop')} {
+    background-size: 100% 100%;
+    padding: 11% 40px 5% 80px;
+    margin-top: -10%;
   }
 
   nav {
