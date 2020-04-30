@@ -6,9 +6,9 @@ import axios from "axios";
 
 const ContactUs = () => {
   // if (typeof window !== 'undefined') {
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [isSubmitted, setIsSubmitted] = useState(false)
-    const [error, setError] = useState()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState();
   const emailRef = useRef();
   const subjectRef = useRef();
   const commentRef = useRef();
@@ -19,10 +19,10 @@ const ContactUs = () => {
     const submission = {
       email: emailRef.current.value,
       subject: subjectRef.current.value,
-      comment: commentRef.current.value
+      comment: commentRef.current.value,
     };
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     axios
       .post(
@@ -31,19 +31,17 @@ const ContactUs = () => {
         { headers: { Accept: "application/json" } }
       )
       .then(function (response) {
-
-        // console.log(response);
-        // show success message, or redirect to success page?
-        setIsSubmitted(true)
-        setIsSubmitting(false)
+        // show success message
+        setIsSubmitted(true);
+        setIsSubmitting(false);
       })
       .catch(function (error) {
-        setError("Oops, something went wrong. Please try again later.")
-        setIsSubmitting(false)
+        setError("Oops, something went wrong. Please try again later.");
+        setIsSubmitting(false);
       });
   };
 
-  const buttonText = isSubmitting ? "Submitting..." : "Contact us"
+  const buttonText = isSubmitting ? "Submitting..." : "Contact us";
 
   return (
     <Container id="contact-us">
@@ -77,7 +75,13 @@ const ContactUs = () => {
           placeholder="Comments"
           required
         />
-        {!isSubmitted && <input disabled={isSubmitted || isSubmitting} type="submit" value={buttonText} />}
+        {!isSubmitted && (
+          <input
+            disabled={isSubmitted || isSubmitting}
+            type="submit"
+            value={buttonText}
+          />
+        )}
         {isSubmitted && <p>Thank you!</p>}
       </form>
     </Container>
@@ -151,7 +155,7 @@ const Container = styled.section`
       padding: 0.5em;
 
       &:disabled {
-        background: ${theme.colors.body}
+        background: ${theme.colors.body};
       }
     }
   }
