@@ -28,7 +28,7 @@ export const Underline = styled.span`
 export const Button = styled.a`
   margin-bottom: 1rem;
   background: ${(props) =>
-    props.disable ? theme.colors.error : theme.colors.success};
+    props.disable ? theme.colors.body : theme.colors.success};
   font-size: ${(props) => (props.disable ? "12px" : "15px")};
   color: white;
   appearance: none;
@@ -45,30 +45,30 @@ export const NavigationItems = () => {
   return (
     <>
       <li>
-        <a href='#about'>ABOUT</a>
+        <a href="#about">ABOUT</a>
       </li>
       <li>
-        <a href='#how-to-use'>HOW TO USE</a>
+        <a href="#how-to-use">HOW TO USE</a>
       </li>
       <li>
-        <a href='#download'>DOWNLOAD</a>
+        <a href="#download">DOWNLOAD</a>
       </li>
       <li>
-        <a href='#contact-us'>CONTACT US</a>
+        <a href="#contact-us">CONTACT US</a>
       </li>
     </>
   );
 };
 
 export const MobileNavigationWrapper = styled.div`
-  ${up('tablet')} {
+  ${up("tablet")} {
     display: none;
   }
 `;
 
 export const DesktopNavigationWrapper = styled.div`
   display: none;
-  ${up('tablet')} {
+  ${up("tablet")} {
     display: block;
   }
 `;
