@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { theme } from "./theme";
-import { up } from "styled-breakpoints";
+import styled from 'styled-components';
+import { theme } from './theme';
+import { up } from 'styled-breakpoints';
 
 export const Underline = styled.span`
   position: relative;
@@ -8,7 +8,7 @@ export const Underline = styled.span`
   z-index: 0;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: -0.25em;
     right: -0.25em;
@@ -17,7 +17,7 @@ export const Underline = styled.span`
     z-index: -1;
     background: ${theme.colors.primary};
 
-    ${up("tablet")} {
+    ${up('tablet')} {
       height: 0.7em;
       top: auto;
       bottom: -0.3em;
@@ -28,8 +28,8 @@ export const Underline = styled.span`
 export const Button = styled.a`
   margin-bottom: 1rem;
   background: ${(props) =>
-    props.disable ? theme.colors.body : theme.colors.success};
-  font-size: ${(props) => (props.disable ? "12px" : "15px")};
+    props.disable ? theme.colors.error : theme.colors.success};
+  font-size: ${(props) => (props.disable ? '12px' : '15px')};
   color: white;
   appearance: none;
   outline: none;
@@ -39,36 +39,4 @@ export const Button = styled.a`
   text-align: center;
   text-decoration: none;
   border-radius: 50px;
-`;
-
-export const NavigationItems = () => {
-  return (
-    <>
-      <li>
-        <a href="#about">ABOUT</a>
-      </li>
-      <li>
-        <a href="#how-to-use">HOW TO USE</a>
-      </li>
-      <li>
-        <a href="#download">DOWNLOAD</a>
-      </li>
-      <li>
-        <a href="#contact-us">CONTACT US</a>
-      </li>
-    </>
-  );
-};
-
-export const MobileNavigationWrapper = styled.div`
-  ${up("tablet")} {
-    display: none;
-  }
-`;
-
-export const DesktopNavigationWrapper = styled.div`
-  display: none;
-  ${up("tablet")} {
-    display: block;
-  }
 `;
