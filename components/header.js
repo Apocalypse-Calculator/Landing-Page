@@ -92,26 +92,24 @@ const Container = styled.header`
   padding: 10% 24px 30px 24px;
   margin-top: -10%;
   position: relative;
-  z-index: 0;
+  z-index: 10;
 
   .mobileNavigation {
     color: #fff;
     font-size: 34px;
-    padding: 8px;
-    padding-top: 14px;
-    padding-right: 24px;
+    margin-top: 10px;
     justify-content: right;
   }
 
   .mobileNavigationStyling {
     background: ${theme.colors.primary};
     position: fixed; 
-    top: 0; 
+    top: -20px; 
     left: 20px;
     right: 0;
     bottom: 250px;
     overflow: hidden;
-    z-index: 1;
+    z-index: 10;
     border-radius: 5px;
 
   }
