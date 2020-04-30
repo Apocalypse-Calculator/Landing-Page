@@ -40,3 +40,35 @@ export const Button = styled.a`
   text-decoration: none;
   border-radius: 50px;
 `;
+
+export const NavigationItems = () => {
+  return (
+    <>
+      <li>
+        <a href='#about'>ABOUT</a>
+      </li>
+      <li>
+        <a href='#how-to-use'>HOW TO USE</a>
+      </li>
+      <li>
+        <a href='#download'>DOWNLOAD</a>
+      </li>
+      <li>
+        <a href='#contact-us'>CONTACT US</a>
+      </li>
+    </>
+  );
+};
+
+export const MobileNavigationWrapper = styled.div`
+  ${up('tablet')} {
+    display: none;
+  }
+`;
+
+export const DesktopNavigationWrapper = styled.div`
+  display: none;
+  ${up('tablet')} {
+    display: block;
+  }
+`;

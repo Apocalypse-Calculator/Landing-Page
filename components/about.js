@@ -42,7 +42,6 @@ const Container = styled.section`
   background: ${theme.colors.secondary};
   color: white;
   text-align: center;
-  position: relative;
   z-index: 1;
   letter-spacing: .5px;
 
