@@ -76,7 +76,8 @@ const Container = styled.section`
   }
 
   h3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight: 300;
   }
 
   ${up("tablet")} {
@@ -134,11 +135,6 @@ const Container = styled.section`
 
       h2 {
         font-size: 3em;
-        
-        &.callout {
-          display: inline;
-          font-size: 5em;
-        }
       }
     }
   }
@@ -177,6 +173,16 @@ const Container = styled.section`
           letter-spacing: .5;
           padding-left: 1em;
           padding-right: 1em;
+        }
+      }
+
+      ${up("desktop")} {
+        h3 {
+          max-width: 28ch;
+          font-size: 1.8em;
+          margin: 0 auto;
+          letter-spacing: .5;
+          padding: 0 0;
         }
       }
     }
