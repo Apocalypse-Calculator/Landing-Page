@@ -31,7 +31,7 @@ const About = () => {
           <Underline>Reduce the stress of worrying</Underline> if you have
           enough supplies
         </h3>
-        <img src="/images/peace_of_mind.png" alt="" />
+        <img src="/images/peace_of_mind_rounded.png" alt="" />
       </div>
     </Container>
   );
@@ -45,6 +45,8 @@ const Container = styled.section`
   position: relative;
   z-index: 1;
   letter-spacing: .5px;
+  padding-left: 4em;
+  padding-right: 4em;
 
   ${up("tablet")} {
     margin: -150px 0;
@@ -52,7 +54,7 @@ const Container = styled.section`
     margin-top: -550px;
     background-color: transparent;
     background-image: url('/shapes/orange_background.png');
-    background-size: 110% 100%;
+    background-size: 108% 108%;
     background-position: top right;
     background-repeat: no-repeat;
     width: 100vw;
@@ -73,6 +75,7 @@ const Container = styled.section`
       padding-top: 350px;
       padding-bottom: 20px;
       margin: 50px auto;
+      margin-top: 10em;
       max-width: 1024px;
       
       h2,
@@ -121,11 +124,13 @@ const Container = styled.section`
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-between;
 
-        p, h3 {
+        h3 {
           max-width: 28ch;
-          font-size: 1.5em;
+          font-size: 1.4em;
           margin: 0 auto;
           letter-spacing: .5;
+          padding-left: 1em;
+          padding-right: 1em;
         }
       }
     }
