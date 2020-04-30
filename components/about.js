@@ -45,8 +45,8 @@ const Container = styled.section`
   position: relative;
   z-index: 1;
   letter-spacing: .5px;
-  padding-left: 4em;
-  padding-right: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
 
   ${up("tablet")} {
     margin: -150px 0;
@@ -72,7 +72,7 @@ const Container = styled.section`
 
   header {
     ${up("tablet")} {
-      padding-top: 350px;
+      padding-top: 450px;
       padding-bottom: 20px;
       margin: 50px auto;
       margin-top: 10em;
@@ -92,7 +92,7 @@ const Container = styled.section`
       }
 
       h2 {
-    font-size: 3em;
+        font-size: 3em;
       }
     }
   }
