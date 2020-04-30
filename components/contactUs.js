@@ -1,22 +1,49 @@
+import React, { useState, useRef } from "react";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
+import axios from "axios";
 
 const ContactUs = () => {
-  function onSubmit(e) {
-    e.preventDefault();
-    window.location.href = url;
+  // if (typeof window !== 'undefined') {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [error, setError] = useState()
+  const emailRef = useRef();
+  const subjectRef = useRef();
+  const commentRef = useRef();
 
-    window.fetch("getform.io/forms/16946", {
-      method: "POST",
-      redirect: "follow",
-      body: JSON.stringify(""), // e.g. {email, name}
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    // .then(display);
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const submission = {
+      email: emailRef.current.value,
+      subject: subjectRef.current.value,
+      comment: commentRef.current.value
+    };
+
+    setIsSubmitting(true)
+
+    axios
+      .post(
+        "https://getform.io/f/f468834f-6d24-46fb-8b76-441914432f20",
+        submission,
+        { headers: { Accept: "application/json" } }
+      )
+      .then(function (response) {
+
+        // console.log(response);
+        // show success message, or redirect to success page?
+        setIsSubmitted(true)
+        setIsSubmitting(false)
+      })
+      .catch(function (error) {
+        setError("Oops, something went wrong. Please try again later.")
+        setIsSubmitting(false)
+      });
+  };
+
+  const buttonText = isSubmitting ? "Submitting..." : "Contact us"
 
   return (
     <Container id="contact-us">
@@ -28,15 +55,30 @@ const ContactUs = () => {
         Have a question or want to know more? <br /> Our volunteer team is here
         to help, so please do fill in the contact form below!
       </p>
-      <form
-        action="https://getform.io/f/bdda47df-89fa-45e6-ba16-4b5c03e05a51"
-        method="POST"
-        name="contact-form"
-      >
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="subject" placeholder="Subject" required />
-        <textarea rows={4} name="comments" placeholder="Comments" required />
-        <input type="submit" value="Contact us" />
+      <form onSubmit={handleSubmit}>
+        <input
+          ref={emailRef}
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+        />
+        <input
+          ref={subjectRef}
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required
+        />
+        <textarea
+          ref={commentRef}
+          rows={4}
+          name="comments"
+          placeholder="Comments"
+          required
+        />
+        {!isSubmitted && <input disabled={isSubmitted || isSubmitting} type="submit" value={buttonText} />}
+        {isSubmitted && <p>Thank you!</p>}
       </form>
     </Container>
   );
@@ -107,6 +149,10 @@ const Container = styled.section`
       background: ${theme.colors.primary};
       color: white;
       padding: 0.5em;
+
+      &:disabled {
+        background: ${theme.colors.body}
+      }
     }
   }
 `;
