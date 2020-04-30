@@ -7,14 +7,14 @@ const About = () => {
   return (
     <Container id="about">
       <header>
-        <p>Concerned about your shelf stock?</p>
-        <p>Do you have everything you need in your cupboards?</p>
+        <p className="question-1">Concerned about your shelf stock?</p>
+        <p className="question-2">
+          Do you have everything you need in your cupboards?
+        </p>
         <h2>
-          <Underline>
-            <div className="callout">ReStock</div>can help!
-          </Underline>
+          <Underline>ReStock can help!</Underline>
         </h2>
-        <p>
+        <p className="description">
           It's time to shelf care. Take the worry out of stocking your shelves
           with ReStock. This free, <Underline>easy to use app</Underline> works
           out how much you will need of an essential item over a set time
@@ -22,7 +22,11 @@ const About = () => {
         </p>
       </header>
       <div className="row">
-        <img src="/images/shelves.png" alt="items on shelves" />
+        <img
+          src="/images/shelves.png"
+          alt="items on shelves"
+          className="shelves"
+        />
         <h3>
           Keep your shelves stocked with the{" "}
           <Underline>amount you need</Underline>
@@ -36,6 +40,7 @@ const About = () => {
         <img
           src="/images/peace_of_mind_rounded.png"
           alt="peace of mind image"
+          className="peace"
         />
       </div>
     </Container>
@@ -51,6 +56,24 @@ const Container = styled.section`
   letter-spacing: .5px;
   padding-left: 1em;
   padding-right: 1em;
+
+  header {
+    & p {
+      margin: 3% auto;
+      padding-left: 2%;
+      padding-right: 2%;
+      font-size: 1em;
+
+      &.question-2 {
+        padding-left: 8%;
+        padding-right: 8%;
+      }
+      &.description {
+        width: 80%;
+        font-size: .9em;
+      }
+    }
+  }
 
   ${up("tablet")} {
     margin: -150px 0;
@@ -70,8 +93,15 @@ const Container = styled.section`
   }
 
   img {
-    max-width: 70%;
     margin: 3% auto;
+
+    &.shelves {
+      max-width: 70%;
+    }
+
+    &.peace {
+      max-width: 50%;
+    }
   }
 
   header {
@@ -90,9 +120,12 @@ const Container = styled.section`
       }
 
       p {
-        width: 70%;
-        margin: 3% auto;
         font-size: 1.5em;
+        
+        &.description {
+          font-size: 1.5em;
+          width: 65%
+        }
       }
 
       h2 {
