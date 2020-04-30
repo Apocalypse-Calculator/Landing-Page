@@ -43,6 +43,22 @@ const Container = styled.section`
     text-align: center;
   }
 
+  .steps {
+    text-align: center;
+  }
+
+  ol {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 0.8em;
+    font-weight: regular;
+    text-align: left;
+
+    & li {
+      padding: 0.5em;
+    }
+  }
+
   ${up("tablet")} {
     margin-bottom: 40px;
     /* font-size: 0.85em; */
@@ -59,16 +75,6 @@ const Container = styled.section`
       & video {
         height: auto;
       }
-    }
-  }
-
-  ol {
-    padding-right: 2em;
-    font-size: 1em;
-    font-weight: regular;
-
-    & li {
-      padding: 0.5em;
     }
   }
 `;
