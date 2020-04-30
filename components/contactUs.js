@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
-import { up } from "styled-breakpoints";
-import styled from "styled-components";
-import { theme } from "../styles/theme";
-import axios from "axios";
+import React, { useState, useRef } from 'react';
+import { up } from 'styled-breakpoints';
+import styled from 'styled-components';
+import { theme } from '../styles/theme';
+import axios from 'axios';
 
 const ContactUs = () => {
   // if (typeof window !== 'undefined') {
@@ -26,9 +26,9 @@ const ContactUs = () => {
 
     axios
       .post(
-        "https://getform.io/f/f468834f-6d24-46fb-8b76-441914432f20",
+        'https://getform.io/f/f468834f-6d24-46fb-8b76-441914432f20',
         submission,
-        { headers: { Accept: "application/json" } }
+        { headers: { Accept: 'application/json' } }
       )
       .then(function (response) {
         // show success message
@@ -36,12 +36,12 @@ const ContactUs = () => {
         setIsSubmitting(false);
       })
       .catch(function (error) {
-        setError("Oops, something went wrong. Please try again later.");
+        setError('Oops, something went wrong. Please try again later.');
         setIsSubmitting(false);
       });
   };
 
-  const buttonText = isSubmitting ? "Submitting..." : "Contact us";
+  const buttonText = isSubmitting ? 'Submitting...' : 'Contact us';
 
   return (
     <Container id="contact-us">
@@ -109,7 +109,7 @@ const Container = styled.section`
   }
 
   p {
-    ${up("tablet")} {
+    ${up('tablet')} {
       text-align: center;
       font-size: 1.5em;
       letter-spacing: 0.3px;
@@ -124,7 +124,7 @@ const Container = styled.section`
     max-width: 1000px;
     margin: 0 auto;
 
-    ${up("tablet")} {
+    ${up('tablet')} {
       max-width: 60ch;
       margin: 0 auto;
     }
@@ -149,7 +149,7 @@ const Container = styled.section`
       }
     }
 
-    input[type="submit"] {
+    input[type='submit'] {
       background: ${theme.colors.primary};
       color: white;
       padding: 0.5em;
