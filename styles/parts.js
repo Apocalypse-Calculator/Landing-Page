@@ -28,7 +28,7 @@ export const Underline = styled.span`
 export const Button = styled.a`
   margin-bottom: 1rem;
   background: ${(props) =>
-    props.disable ? theme.colors.error : theme.colors.success};
+    props.disable ? theme.colors.body : theme.colors.success};
   font-size: ${(props) => (props.disable ? '12px' : '15px')};
   color: white;
   appearance: none;
