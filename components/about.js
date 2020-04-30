@@ -42,7 +42,6 @@ const Container = styled.section`
   background: ${theme.colors.secondary};
   color: white;
   text-align: center;
-  position: relative;
   z-index: 1;
   letter-spacing: .5px;
   padding-left: 1em;
@@ -51,10 +50,10 @@ const Container = styled.section`
   ${up("tablet")} {
     margin: -150px 0;
     padding: 250px 0;
-    margin-top: -550px;
+    margin-top: -620px;
     background-color: transparent;
     background-image: url('/shapes/orange_background.png');
-    background-size: 108% 108%;
+    background-size: 108% 110%;
     background-position: top right;
     background-repeat: no-repeat;
     width: 100vw;
@@ -62,7 +61,7 @@ const Container = styled.section`
   
   ${up("desktop")} {
     padding: 250px 5%;
-    margin-top: -500px;
+    // margin-top: -500px;
   }
 
   img {
