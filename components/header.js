@@ -1,84 +1,54 @@
-import React, { useState } from "react";
-import { up } from "styled-breakpoints";
-import styled from "styled-components";
-import { theme } from "../styles/theme";
-import { Button } from "../styles/parts";
-import { MobileNavigationWrapper, DesktopNavigationWrapper, NavigationItems } from "../styles/parts";
+import { up } from 'styled-breakpoints';
+import styled from 'styled-components';
+import { theme } from '../styles/theme';
+import { Button } from '../styles/parts';
 
 const Header = () => {
-
-  const MobileNavigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-  
-  const openMenu = () => {
-    setIsOpen(true);
-  };
-  
-   const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-    if (isOpen) {
-      return (
-        <ul className='mobileNavigationStyling'>
-
-          <button className='mobileNavigation' onClick={closeMenu}>
-          X
-          </button>
-          <NavigationItems closeMenu={closeMenu} />
-
-        </ul>
-      );
-    } else {
-      return <button className='mobileNavigation' onClick={openMenu}>
-      ☰
-      </button>;
-    }
-  };
-
   return (
     <Container>
       <nav>
-        <div id="brand">
-          <a href="/">
-            <img src="/images/logo.png" alt="" />
+        <div id='brand'>
+          <a href='/'>
+            <img src='/images/logo.png' alt='' />
           </a>
         </div>
-
-        <DesktopNavigationWrapper>
         <ul>
-          <NavigationItems />
+          <li>
+            <a href='#'>ABOUT</a>
+          </li>
+          <li>
+            <a href='#'>HOW TO USE</a>
+          </li>
+          <li>
+            <a href='#'>DOWNLOAD</a>
+          </li>
+          <li>
+            <a href='#'>CONTACT US</a>
+          </li>
         </ul>
-        </DesktopNavigationWrapper>
-
-        <MobileNavigationWrapper>
-
-        <MobileNavigation />
-
-      </MobileNavigationWrapper>
       </nav>
 
-      <Hero id="hero">
+      <Hero id='hero'>
         <h1>
           Bring back your shelf-confidence with this easy stock calculator!
         </h1>
-        <div className="row">
+        <div className='row'>
           <div>
-            <img src="/images/web_light.png" alt="" />
+            <img src='/images/web_light.png' alt='' />
             <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <img src="/images/apple_light.png" alt="" />
+            <img src='/images/apple_light.png' alt='' />
             <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <img src="/images/android_light.png" alt="" />
-            <Button as="a" href="#">
+            <img src='/images/android_light.png' alt='' />
+            <Button as='a' href='#'>
               Download
             </Button>
           </div>
         </div>
-        <img src="/images/phone.png" alt="demo" />
+        <img src='/images/phone.png' alt='demo' />
       </Hero>
     </Container>
   );
@@ -88,78 +58,41 @@ export default Header;
 
 const Container = styled.header`
   background: ${theme.colors.primary};
-  padding: 10% 24px 30px 24px;
+  padding: 11% 40px 0 80px;
   margin-top: -10%;
   position: relative;
-  z-index: 0;
+  z-index: 2;
 
-  .mobileNavigation {
-    color: #fff;
-    font-size: 34px;
-    padding: 8px;
-    padding-top: 14px;
-    padding-right: 24px;
-    justify-content: right;
-  }
-
-  .mobileNavigationStyling {
-    background: ${theme.colors.primary};
-    position: fixed; 
-    top: 0; 
-    left: 20px;
-    right: 0;
-    bottom: 250px;
-    overflow: hidden;
-    Zindex: 1;
-    border-radius: 5px;
-
-  }
-
-  #brand {
-    padding-top: 20px;
-    padding-left: 30px;
-    width: 55px;
-  }
-
-  ${up("tablet")} {
-    padding: 11% 40px 0 80px;
+  ${up('tablet')} {
     background-color: transparent;
-    background-image: url("/shapes/green_header.png");
+    background-image: url('/shapes/green_header.png');
     background-size: 100% 100%;
     background-position: 50% center;
     background-repeat: no-repeat;
-
-    #brand {
-      width: 100px;
-
-    }
   }
 
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow:hidden;
-
 
     img {
       width: 90px;
     }
-  }
 
     ul {
       list-style: none;
       padding: 0;
       text-align: right;
 
-      ${up("tablet")} {
+      ${up('tablet')} {
         width: 100%;
         display: flex;
         justify-content: flex-end;
 
-          li {
-            margin: 0 5px;
-          }
+        li {
+          margin: 0 5px;
+        }
       }
 
       li {
@@ -184,11 +117,11 @@ const Hero = styled.section`
   max-width: 1200px;
   margin: 0 auto;
 
-  ${up("tablet")} {
+  ${up('tablet')} {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "title image" "links image";
+    grid-template-areas: 'title image' 'links image';
     align-items: center;
     justify-content: center;
     grid-gap: 10px;
@@ -207,28 +140,23 @@ const Hero = styled.section`
 
   h1 {
     margin: 0;
-    padding-bottom: 30px;
+    padding: 30px;
     background: ${theme.colors.primary};
     color: white;
     text-align: center;
-    letter-spacing: 0.7px;
-    font-size: 20px;
+    letter-spacing: .7px;
 
-    ${up("tablet")} {
+    ${up('tablet')} {
       background: transparent;
-      letter-spacing: 0.7px;
-      padding-bottom: 30px;
-      padding-top: 5px;
-      font-size: 28px;
+      letter-spacing: .7px;
     }
   }
 
   .row {
-    padding: 5px 10px;
+    padding: 20px 30px;
     background: white;
-    border-radius: 60px;
 
-    ${up("tablet")} {
+    ${up('tablet')} {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -243,7 +171,7 @@ const Hero = styled.section`
       align-items: center;
       justify-content: center;
 
-      ${up("tablet")} {
+      ${up('tablet')} {
         margin: 35px;
       }
 
@@ -262,7 +190,7 @@ const Hero = styled.section`
 
   & > img {
     display: none;
-    ${up("tablet")} {
+    ${up('tablet')} {
       display: block;
     }
     max-width: 250px;
