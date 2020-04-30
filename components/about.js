@@ -10,7 +10,9 @@ const About = () => {
         <p>Concerned about your shelf stock?</p>
         <p>Do you have everything you need in your cupboards?</p>
         <h2>
-          <Underline>ReStock can help!</Underline>
+          <Underline>
+            <div className="callout">ReStock</div>can help!
+          </Underline>
         </h2>
         <p>
           It's time to shelf care. Take the worry out of stocking your shelves
@@ -20,7 +22,7 @@ const About = () => {
         </p>
       </header>
       <div className="row">
-        <img src="/images/shelves.png" alt="" />
+        <img src="/images/shelves.png" alt="items on shelves" />
         <h3>
           Keep your shelves stocked with the{" "}
           <Underline>amount you need</Underline>
@@ -31,7 +33,10 @@ const About = () => {
           <Underline>Reduce the stress of worrying</Underline> if you have
           enough supplies
         </h3>
-        <img src="/images/peace_of_mind_rounded.png" alt="" />
+        <img
+          src="/images/peace_of_mind_rounded.png"
+          alt="peace of mind image"
+        />
       </div>
     </Container>
   );
@@ -92,6 +97,11 @@ const Container = styled.section`
 
       h2 {
         font-size: 3em;
+        
+        &.callout {
+          display: inline;
+          font-size: 5em;
+        }
       }
     }
   }
