@@ -75,6 +75,10 @@ const Container = styled.section`
     }
   }
 
+  h3 {
+    font-size: 1.1em;
+  }
+
   ${up("tablet")} {
     margin: -150px 0;
     padding: 250px 0;
