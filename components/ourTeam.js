@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { up } from 'styled-breakpoints';
 import { theme } from '../styles/theme';
 
 const OurTeam = () => (
@@ -18,6 +19,11 @@ const OurTeam = () => (
       <li>Yegor Golovnia</li>
       <li>Margaret Beardsley</li>
       <li>Ankit Joshi</li>
+      <li>Sai Sandeep</li>
+      <li>Hannah Kruglikov</li>
+      <li>Will Krugman</li>
+      <li>LMY</li>
+      <li>Emily Dong</li>
     </ul>
   </Container>
 );
@@ -29,7 +35,15 @@ const Container = styled.section`
   text-align: center;
   max-width: 1000px;
   margin: 0 auto;
+  font-size: 1em;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  ${up('tablet')} {
   font-size: 1.5em;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  }
 
   h2 {
     color: ${theme.colors.text};
