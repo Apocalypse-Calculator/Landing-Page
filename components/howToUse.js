@@ -63,6 +63,12 @@ const Container = styled.section`
     margin-bottom: 40px;
     /* font-size: 0.85em; */
 
+    h2 {
+      display: none;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
     .row {
       display: block;
     }
