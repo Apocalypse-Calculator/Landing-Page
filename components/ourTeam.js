@@ -23,6 +23,10 @@ const OurTeam = () => (
       <li>Hannah Kruglikov</li>
       <li>Will Krugman</li>
       <li>LMY</li>
+      <li>Alisa Chan</li>
+      <li>Katherine Peterson</li>
+      <li>Mina Ky</li>
+      <li>Alex Bray</li>
       <li>Emily Dong</li>
     </ul>
   </Container>
