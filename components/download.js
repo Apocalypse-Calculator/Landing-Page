@@ -17,8 +17,10 @@ const Download = () => (
           <Button disable>Coming Soon</Button>
         </div>
         <div>
-          <img src='/images/android.png' alt='' />
-          <Button as='a' href='#'>
+          <a href='https://play.google.com/store/apps/details?id=com.zachl.restock'>
+          <img src='/images/android_light.png' alt=''/>
+          </a>
+          <Button as='a' href='https://play.google.com/store/apps/details?id=com.zachl.restock'>
             Download
           </Button>
         </div>
