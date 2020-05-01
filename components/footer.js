@@ -12,8 +12,7 @@ export default Footer;
 const Container = styled.footer`
   background: ${(props) => props.theme.colors.primary};
   color: white;
-  padding: 50px 20px;
-  // margin-top: 50px;
+  padding: 10px 20px;
   text-align: center;
   font-size: 1.5em;
   letter-spacing: 0.5px;
@@ -24,11 +23,12 @@ const Container = styled.footer`
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: 0% 100%;
+    padding: 50px 20px;
     height: 400px;
     margin-top: -100px;
-  }
 
-  h3 {
-    margin-top: 280px;
+    h3 {
+      margin-top: 280px;
+    }
   }
 `;
