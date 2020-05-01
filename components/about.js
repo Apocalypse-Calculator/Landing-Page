@@ -7,12 +7,14 @@ const About = () => {
   return (
     <Container id="about">
       <header>
-        <p>Concerned about your shelf stock?</p>
-        <p>Do you have everything you need in your cupboards?</p>
+        <p className="question-1">Concerned about your shelf stock?</p>
+        <p className="question-2">
+          Do you have everything you need in your cupboards?
+        </p>
         <h2>
           <Underline>ReStock can help!</Underline>
         </h2>
-        <p>
+        <p className="description">
           It's time to shelf care. Take the worry out of stocking your shelves
           with ReStock. This free, <Underline>easy to use app</Underline> works
           out how much you will need of an essential item over a set time
@@ -20,7 +22,11 @@ const About = () => {
         </p>
       </header>
       <div className="row">
-        <img src="/images/shelves.png" alt="" />
+        <img
+          src="/images/shelves.png"
+          alt="items on shelves"
+          className="shelves"
+        />
         <h3>
           Keep your shelves stocked with the{" "}
           <Underline>amount you need</Underline>
@@ -31,7 +37,11 @@ const About = () => {
           <Underline>Reduce the stress of worrying</Underline> if you have
           enough supplies
         </h3>
-        <img src="/images/peace_of_mind.png" alt="" />
+        <img
+          src="/images/peace_of_mind_rounded.png"
+          alt="peace of mind image"
+          className="peace"
+        />
       </div>
     </Container>
   );
@@ -44,14 +54,39 @@ const Container = styled.section`
   text-align: center;
   z-index: 1;
   letter-spacing: .5px;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  header {
+    & p {
+      margin: 3% auto;
+      padding-left: 2%;
+      padding-right: 2%;
+      font-size: 1em;
+
+      &.question-2 {
+        padding-left: 8%;
+        padding-right: 8%;
+      }
+      &.description {
+        width: 80%;
+        font-size: .9em;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
 
   ${up("tablet")} {
     margin: -150px 0;
     padding: 250px 0;
-    margin-top: -550px;
+    margin-top: -620px;
     background-color: transparent;
     background-image: url('/shapes/orange_background.png');
-    background-size: 110% 100%;
+    background-size: 108% 110%;
     background-position: top right;
     background-repeat: no-repeat;
     width: 100vw;
@@ -59,19 +94,27 @@ const Container = styled.section`
   
   ${up("desktop")} {
     padding: 250px 5%;
-    margin-top: -500px;
+    // margin-top: -500px;
   }
 
   img {
-    max-width: 70%;
     margin: 3% auto;
+
+    &.shelves {
+      max-width: 70%;
+    }
+
+    &.peace {
+      max-width: 50%;
+    }
   }
 
   header {
     ${up("tablet")} {
-      padding-top: 350px;
+      padding-top: 450px;
       padding-bottom: 20px;
       margin: 50px auto;
+      margin-top: 10em;
       max-width: 1024px;
       
       h2,
@@ -82,13 +125,16 @@ const Container = styled.section`
       }
 
       p {
-        width: 70%;
-        margin: 3% auto;
         font-size: 1.5em;
+        
+        &.description {
+          font-size: 1.5em;
+          width: 65%
+        }
       }
 
       h2 {
-    font-size: 3em;
+        font-size: 3em;
       }
     }
   }
@@ -120,11 +166,23 @@ const Container = styled.section`
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-between;
 
-        p, h3 {
+        h3 {
           max-width: 28ch;
-          font-size: 1.5em;
+          font-size: 1.4em;
           margin: 0 auto;
           letter-spacing: .5;
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+      }
+
+      ${up("desktop")} {
+        h3 {
+          max-width: 28ch;
+          font-size: 1.8em;
+          margin: 0 auto;
+          letter-spacing: .5;
+          padding: 0 0;
         }
       }
     }

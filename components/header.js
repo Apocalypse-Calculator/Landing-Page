@@ -1,84 +1,85 @@
-import React, { useState } from 'react';
-import { up } from 'styled-breakpoints';
-import styled from 'styled-components';
-import { theme } from '../styles/theme';
-import { Button } from '../styles/parts';
-import { MobileNavigationWrapper, DesktopNavigationWrapper, NavigationItems } from '../styles/parts';
+import React, { useState } from "react";
+import { up } from "styled-breakpoints";
+import styled from "styled-components";
+import { theme } from "../styles/theme";
+import { Button } from "../styles/parts";
+import {
+  MobileNavigationWrapper,
+  DesktopNavigationWrapper,
+  NavigationItems,
+} from "../styles/parts";
 
 const Header = () => {
-
   const MobileNavigation = () => {
     const [isOpen, setIsOpen] = useState(false);
-  
-  const openMenu = () => {
-    setIsOpen(true);
-  };
-  
-   const closeMenu = () => {
-    setIsOpen(false);
-  };
+
+    const openMenu = () => {
+      setIsOpen(true);
+    };
+
+    const closeMenu = () => {
+      setIsOpen(false);
+    };
 
     if (isOpen) {
       return (
-        <ul className='mobileNavigationStyling'>
-
-          <button className='mobileNavigation' onClick={closeMenu}>
-          X
+        <ul className="mobileNavigationStyling">
+          <button className="mobileNavigation" onClick={closeMenu}>
+            X
           </button>
           <NavigationItems closeMenu={closeMenu} />
-
         </ul>
       );
     } else {
-      return <button className='mobileNavigation' onClick={openMenu}>
-      ☰
-      </button>;
+      return (
+        <button className="mobileNavigation" onClick={openMenu}>
+          ☰
+        </button>
+      );
     }
   };
 
   return (
     <Container>
       <nav>
-        <div id='brand'>
-          <a href='/'>
-            <img src='/images/logo.png' alt='' />
+        <div id="brand">
+          <a href="/">
+            <img src="/images/logo.png" alt="" />
           </a>
         </div>
 
         <DesktopNavigationWrapper>
-        <ul>
-          <NavigationItems />
-        </ul>
+          <ul>
+            <NavigationItems />
+          </ul>
         </DesktopNavigationWrapper>
 
         <MobileNavigationWrapper>
-
-        <MobileNavigation />
-
-      </MobileNavigationWrapper>
+          <MobileNavigation />
+        </MobileNavigationWrapper>
       </nav>
 
-      <Hero id='hero'>
+      <Hero id="hero">
         <h1>
           Bring back your shelf-confidence with this easy stock calculator!
         </h1>
-        <div className='row'>
+        <div className="row">
           <div>
-            <img src='/images/web_light.png' alt='' />
+            <img src="/images/web_light.png" alt="" />
             <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <img src='/images/apple_light.png' alt='' />
+            <img src="/images/apple_light.png" alt="" />
             <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <img src='/images/android_light.png' alt='' />
-            <Button as='a' href='#'>
+            <img src="/images/android_light.png" alt="" />
+            <Button as="a" href="#">
               Download
             </Button>
           </div>
         </div>
-        <img src='/images/phone.png' alt='demo' />
+        <img src="/images/phone.png" alt="demo" />
       </Hero>
     </Container>
   );
@@ -91,26 +92,24 @@ const Container = styled.header`
   padding: 10% 24px 30px 24px;
   margin-top: -10%;
   position: relative;
-  z-index: 0;
+  z-index: 10;
 
   .mobileNavigation {
     color: #fff;
     font-size: 34px;
-    padding: 8px;
-    padding-top: 14px;
-    padding-right: 24px;
+    margin-top: 10px;
     justify-content: right;
   }
 
   .mobileNavigationStyling {
     background: ${theme.colors.primary};
     position: fixed; 
-    top: 0; 
+    top: -20px; 
     left: 20px;
     right: 0;
     bottom: 250px;
     overflow: hidden;
-    Zindex: 1;
+    z-index: 10;
     border-radius: 5px;
 
   }
@@ -121,7 +120,7 @@ const Container = styled.header`
     width: 55px;
   }
 
-  ${up('tablet')} {
+  ${up("tablet")} {
     padding: 11% 40px 0 80px;
     background-color: transparent;
     background-image: url('/shapes/green_header.png');
@@ -152,7 +151,7 @@ const Container = styled.header`
       padding: 0;
       text-align: right;
 
-      ${up('tablet')} {
+      ${up("tablet")} {
         width: 100%;
         display: flex;
         justify-content: flex-end;
@@ -184,11 +183,11 @@ const Hero = styled.section`
   max-width: 1200px;
   margin: 0 auto;
 
-  ${up('tablet')} {
+  ${up("tablet")} {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: 'title image' 'links image';
+    grid-template-areas: "title image" "links image";
     align-items: center;
     justify-content: center;
     grid-gap: 10px;
@@ -214,7 +213,7 @@ const Hero = styled.section`
     letter-spacing: 0.7px;
     font-size: 20px;
 
-    ${up('tablet')} {
+    ${up("tablet")} {
       background: transparent;
       letter-spacing: 0.7px;
       padding-bottom: 30px;
@@ -228,7 +227,7 @@ const Hero = styled.section`
     background: white;
     border-radius: 60px;
 
-    ${up('tablet')} {
+    ${up("tablet")} {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -243,7 +242,7 @@ const Hero = styled.section`
       align-items: center;
       justify-content: center;
 
-      ${up('tablet')} {
+      ${up("tablet")} {
         margin: 35px;
       }
 
@@ -262,7 +261,7 @@ const Hero = styled.section`
 
   & > img {
     display: none;
-    ${up('tablet')} {
+    ${up("tablet")} {
       display: block;
     }
     max-width: 250px;
