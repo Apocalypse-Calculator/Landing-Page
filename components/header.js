@@ -73,10 +73,13 @@ const Header = () => {
             <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <a href='https://play.google.com/store/apps/details?id=com.zachl.restock'>
-            <img src="/images/android_light.png" alt="" />
+            <a href="https://play.google.com/store/apps/details?id=com.zachl.restock">
+              <img src="/images/android_light.png" alt="" />
             </a>
-            <Button as="a" href="https://play.google.com/store/apps/details?id=com.zachl.restock">
+            <Button
+              as="a"
+              href="https://play.google.com/store/apps/details?id=com.zachl.restock"
+            >
               Download
             </Button>
           </div>
