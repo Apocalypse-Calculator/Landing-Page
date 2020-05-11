@@ -7,6 +7,10 @@ const Download = () => (
   <Container id='download'>
     <div className='wrapper'>
       <h2>Get prepared and ReStock now!</h2>
+      <p>What's your experience using ReStock? We'd love to <bold>hear your <a href='https://docs.google.com/forms/d/e/1FAIpQLSfzY1YI8eKwEakUzFbkEeSjwQShDMHcrsoFpa-wOw0BSvedCg/viewform'>
+      feedback.
+      </a></bold></p>
+
       <div className='row'>
         <div>
           <img src='/images/desktop.png' alt='' />
@@ -35,6 +39,10 @@ const Container = styled.section`
   background: ${theme.colors.secondary};
   color: white;
   text-align: center;
+
+  bold {
+    font-weight: bold;
+  }
 
   ${up('tablet')} {
     position: relative;
