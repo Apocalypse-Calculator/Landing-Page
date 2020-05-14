@@ -58,31 +58,31 @@ const Header = () => {
           <NavigationItems />
         </DesktopNavigationWrapper>
 
-        {/* <MobileNavigationWrapper> */}
-        {/* <MobileNavigation /> */}
-        <div className="mobileNav">
-          <input type="checkbox" />
-          {/* hamburger icon */}
-          <div className="bar1"></div>
-          <div className="bar2"></div>
-          <div className="bar3"></div>
+        <MobileNavigationWrapper>
+          {/* <MobileNavigation /> */}
+          <div className="mobileNav">
+            <input type="checkbox" />
+            {/* hamburger icon */}
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
 
-          <ul id="menu">
-            <a href="#about">
-              <li>ABOUT</li>
-            </a>
-            <a href="#how-to-use">
-              <li>HOW TO USE</li>
-            </a>
-            <a href="#download">
-              <li>DOWNLOAD</li>
-            </a>
-            <a href="#contact-us">
-              <li>CONTACT US</li>
-            </a>
-          </ul>
-        </div>
-        {/* </MobileNavigationWrapper> */}
+            <ul id="menu">
+              <a href="#about">
+                <li>ABOUT</li>
+              </a>
+              <a href="#how-to-use">
+                <li>HOW TO USE</li>
+              </a>
+              <a href="#download">
+                <li>DOWNLOAD</li>
+              </a>
+              <a href="#contact-us">
+                <li>CONTACT US</li>
+              </a>
+            </ul>
+          </div>
+        </MobileNavigationWrapper>
       </nav>
 
       <Hero id="hero">
@@ -171,6 +171,7 @@ const Container = styled.header`
 
       &:checked ~ .bar1 {
         transform: rotate(-45deg) translate(-16px, 13px);
+        background-color: #fff;
       }
 
       &:checked ~ .bar2 {
@@ -179,6 +180,7 @@ const Container = styled.header`
       
       &:checked ~ .bar3 {
         transform: rotate(45deg) translate(-16px, -13px);
+        background-color: #fff;
       }
 
       &:checked ~ #menu {
@@ -192,11 +194,11 @@ const Container = styled.header`
       width: 32px;
       height: 4px;
       position: relative;
-      background-color: white;
+      background-color: ${theme.colors.body};
       border-radius: 3px;
       margin-bottom: 5px;
       z-index: 1;
-      transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1);
+      transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1), background-color .4s cubic-bezier(0.77, 0.2, 0.05, 1), opacity .4s ease;
     }
 
     .bar1 {
@@ -214,7 +216,7 @@ const Container = styled.header`
     margin: -100px -50px 0 0;
     padding: 50px;
     padding-top: 125px;
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.body};
     opacity: 95%;
     text-align: left;
     list-style-type: none;
