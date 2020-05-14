@@ -43,7 +43,7 @@ export const Button = styled.a`
 
 export const NavigationItems = () => {
   return (
-    <>
+    <ul>
       <li>
         <a href="#about">ABOUT</a>
       </li>
@@ -56,7 +56,7 @@ export const NavigationItems = () => {
       <li>
         <a href="#contact-us">CONTACT US</a>
       </li>
-    </>
+    </ul>
   );
 };
 

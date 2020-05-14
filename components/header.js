@@ -55,21 +55,34 @@ const Header = () => {
         </div>
 
         <DesktopNavigationWrapper>
-          <ul>
-            <NavigationItems />
-          </ul>
+          <NavigationItems />
         </DesktopNavigationWrapper>
 
-        <MobileNavigationWrapper>
-          {/* <MobileNavigation /> */}
-          <div className="mobileNav">
-            <input type="checkbox" />
-            {/* hamburger icon */}
-            <div className="bar1"></div>
-            <div className="bar2"></div>
-            <div className="bar3"></div>
-          </div>
-        </MobileNavigationWrapper>
+        {/* <MobileNavigationWrapper> */}
+        {/* <MobileNavigation /> */}
+        <div className="mobileNav">
+          <input type="checkbox" />
+          {/* hamburger icon */}
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+
+          <ul id="menu">
+            <a href="#about">
+              <li>ABOUT</li>
+            </a>
+            <a href="#how-to-use">
+              <li>HOW TO USE</li>
+            </a>
+            <a href="#download">
+              <li>DOWNLOAD</li>
+            </a>
+            <a href="#contact-us">
+              <li>CONTACT US</li>
+            </a>
+          </ul>
+        </div>
+        {/* </MobileNavigationWrapper> */}
       </nav>
 
       <Hero id="hero">
@@ -167,6 +180,10 @@ const Container = styled.header`
       &:checked ~ .bar3 {
         transform: rotate(45deg) translate(-16px, -13px);
       }
+
+      &:checked ~ #menu {
+        transform: translate(-60%, 0);
+      }
     }
 
     // hamburger icon
@@ -179,7 +196,6 @@ const Container = styled.header`
       border-radius: 3px;
       margin-bottom: 5px;
       z-index: 1;
-      // transform-origin: 4px 0;
       transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1);
     }
 
@@ -189,6 +205,31 @@ const Container = styled.header`
 
     .bar3 {
       transform-origin: 0% 100%;
+    }
+  }
+
+  #menu {
+    position: absolute;
+    width: 300px;
+    margin: -100px -50px 0 0;
+    padding: 50px;
+    padding-top: 125px;
+    background-color: ${theme.colors.primary};
+    opacity: 95%;
+    text-align: left;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: top right;
+    transform: translate(100%, 0);
+    
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    li {
+      padding: 1rem;
     }
   }
 
