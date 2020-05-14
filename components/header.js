@@ -218,11 +218,13 @@ const Container = styled.header`
     padding-top: 125px;
     background-color: ${theme.colors.body};
     opacity: 95%;
+    border-radius: 10px;
     text-align: left;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: top right;
-    transform: translate(100%, 0);
+    transform: translate(50%, 0);
+    transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1);
     
     a {
       text-decoration: none;
