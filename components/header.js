@@ -155,8 +155,20 @@ const Container = styled.header`
       // place hidden checkbox over hamburger icon
       z-index: 2;
       opacity: 0;
+
+      &:checked ~ .bar1 {
+        transform: rotate(-45deg) translate(-16px, 13px);
+      }
+
+      &:checked ~ .bar2 {
+        opacity: 0;
+      }
+      
+      &:checked ~ .bar3 {
+        transform: rotate(45deg) translate(-16px, -13px);
+      }
     }
-    
+
     // hamburger icon
     .bar1, .bar2, .bar3 {
       display: block;
@@ -167,9 +179,18 @@ const Container = styled.header`
       border-radius: 3px;
       margin-bottom: 5px;
       z-index: 1;
+      // transform-origin: 4px 0;
+      transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1);
+    }
+
+    .bar1 {
+      transform-origin: 0% 0%;
+    }
+
+    .bar3 {
+      transform-origin: 0% 100%;
     }
   }
-
 
   #brand {
     padding-top: 20px;
