@@ -125,25 +125,6 @@ const Container = styled.header`
   position: relative;
   z-index: 10;
 
-  .mobileNavigation {
-    color: #fff;
-    font-size: 34px;
-    margin-top: 10px;
-    justify-content: right;
-  }
-
-  .mobileNavigationStyling {
-    background: ${theme.colors.primary};
-    position: fixed; 
-    top: -20px; 
-    left: 20px;
-    right: 0;
-    bottom: 250px;
-    overflow: hidden;
-    z-index: 10;
-    border-radius: 5px;
-  }
-
   // hamburger icon container
   .mobileNav {
     position: fixed;
@@ -258,18 +239,31 @@ const Container = styled.header`
   }
 
   nav {
-    display: flex;
+    // display: inline-block;
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-
-
+    position: fixed;
+    left: 0%;
+    padding-bottom: 2%;
+    width: 100%;
+    background-color: ${theme.colors.primary};
+    
     img {
+      display: flex;
       width: 90px;
     }
-  }
 
-    ul {
+    ${up("tablet")} {
+      display: flex;
+      position: relative;
+      background-color: transparent;
+      margin-bottom: 100px;
+    }
+    
+  }
+  
+  ul {
       list-style: none;
       padding: 0;
       text-align: right;
@@ -305,6 +299,7 @@ const Container = styled.header`
 const Hero = styled.section`
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 4.5rem;
 
   ${up("tablet")} {
     display: grid;
