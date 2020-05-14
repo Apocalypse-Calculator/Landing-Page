@@ -10,34 +10,40 @@ import {
 } from "../styles/parts";
 
 const Header = () => {
-  const MobileNavigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  // const MobileNavigation = () => {
+  //   const [isOpen, setIsOpen] = useState(false);
 
-    const openMenu = () => {
-      setIsOpen(true);
-    };
+  //   const openMenu = () => {
+  //     setIsOpen(true);
+  //   };
 
-    const closeMenu = () => {
-      setIsOpen(false);
-    };
+  //   const closeMenu = () => {
+  //     setIsOpen(false);
+  //   };
 
-    if (isOpen) {
-      return (
-        <ul className="mobileNavigationStyling">
-          <button className="mobileNavigation" onClick={closeMenu}>
-            X
-          </button>
-          <NavigationItems closeMenu={closeMenu} />
-        </ul>
-      );
-    } else {
-      return (
-        <button className="mobileNavigation" onClick={openMenu}>
-          ☰
-        </button>
-      );
-    }
-  };
+  //   if (isOpen) {
+  //     return (
+  //       <ul className="mobileNavigationStyling">
+  //         <button className="mobileNavigation" onClick={closeMenu}>
+  //           X
+  //         </button>
+  //         <NavigationItems closeMenu={closeMenu} />
+  //       </ul>
+  //     );
+  //   } else {
+  //     return (
+  //       // <button className="mobileNavigation" onClick={openMenu}>
+  //       //   ☰
+  //       // </button>
+  //       <div className="mobileNavigation">
+  //         <input type="checkbox" />
+  //         <div className="bar1"></div>
+  //         <div className="bar2"></div>
+  //         <div className="bar3"></div>
+  //       </div>
+  //     );
+  //   }
+  // };
 
   return (
     <Container>
@@ -55,7 +61,14 @@ const Header = () => {
         </DesktopNavigationWrapper>
 
         <MobileNavigationWrapper>
-          <MobileNavigation />
+          {/* <MobileNavigation /> */}
+          <div className="mobileNav">
+            <input type="checkbox" />
+            {/* hamburger icon */}
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+          </div>
         </MobileNavigationWrapper>
       </nav>
 
@@ -116,8 +129,47 @@ const Container = styled.header`
     overflow: hidden;
     z-index: 10;
     border-radius: 5px;
-
   }
+
+  // hamburger icon container
+  .mobileNav {
+    position: fixed;
+    display: block;
+    cursor: pointer;
+    top: 3%;
+    right: 3%;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+
+    // checkbox to assist hamburger icon
+    input {
+      display: block;
+      width: 42px;
+      height: 32px;
+      position: absolute;
+      top: -4px;
+      left -4px;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      // place hidden checkbox over hamburger icon
+      z-index: 2;
+      opacity: 0;
+    }
+    
+    // hamburger icon
+    .bar1, .bar2, .bar3 {
+      display: block;
+      width: 32px;
+      height: 4px;
+      position: relative;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      z-index: 1;
+    }
+  }
+
 
   #brand {
     padding-top: 20px;
