@@ -34,8 +34,8 @@ export default class MyDocument extends Document {
     )
   }
   static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+    const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
@@ -54,18 +54,7 @@ export default class MyDocument extends Document {
         )
       };
     } finally {
-      sheet.seal();
+      sheet.seal()
     }
-  }
-  render() {
-    return (
-      <Html lang='en'>
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
   }
 }
