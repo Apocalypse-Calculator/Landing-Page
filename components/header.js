@@ -123,36 +123,35 @@ const Container = styled.header`
   padding: 10% 24px 30px 24px;
   margin-top: -10%;
   position: relative;
-  z-index: 10;
+  // z-index: 10;
 
   // hamburger icon container
   .mobileNav {
-    position: fixed;
-    display: block;
+    display: inline-block;
     cursor: pointer;
-    top: 3%;
-    right: 3%;
+    margin: -2rem 1rem;
+    float: right;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
 
     // checkbox to assist hamburger icon
     input {
-      display: block;
+      display: inline-block;
       width: 42px;
       height: 32px;
       position: absolute;
-      top: -4px;
-      left -4px;
+      float: right;
+      // top: -4px;
+      // left -4px;
       cursor: pointer;
       -webkit-touch-callout: none;
       // place hidden checkbox over hamburger icon
-      z-index: 2;
+      z-index: 3;
       opacity: 0;
 
       &:checked ~ .bar1 {
         transform: rotate(-45deg) translate(-16px, 13px);
-        background-color: #fff;
       }
 
       &:checked ~ .bar2 {
@@ -161,11 +160,10 @@ const Container = styled.header`
       
       &:checked ~ .bar3 {
         transform: rotate(45deg) translate(-16px, -13px);
-        background-color: #fff;
       }
 
       &:checked ~ #menu {
-        transform: translate(-60%, 0);
+        transform: translate(-85%, 5%);
       }
     }
 
@@ -175,11 +173,11 @@ const Container = styled.header`
       width: 32px;
       height: 4px;
       position: relative;
-      background-color: ${theme.colors.body};
+      background-color: #fff;
       border-radius: 3px;
       margin-bottom: 5px;
       z-index: 1;
-      transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1), background-color .4s cubic-bezier(0.77, 0.2, 0.05, 1), opacity .4s ease;
+      transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1), opacity .4s ease;
     }
 
     .bar1 {
@@ -193,19 +191,20 @@ const Container = styled.header`
 
   #menu {
     position: absolute;
-    width: 300px;
-    margin: -100px -50px 0 0;
-    padding: 50px;
-    padding-top: 125px;
-    background-color: ${theme.colors.body};
-    opacity: 95%;
+    width: 110vw;
+    margin-top: -10px;
+    float: left;
+    padding: 20px;
+    background-color: ${theme.colors.primary};
+    opacity: 98%;
     border-radius: 10px;
     text-align: left;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
-    transform-origin: top right;
-    transform: translate(50%, 0);
+    // transform-origin: top left;
+    transform: translate(-85%, -130%);
     transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    z-index: -2;
     
     a {
       text-decoration: none;
@@ -214,14 +213,20 @@ const Container = styled.header`
     }
 
     li {
-      padding: 1rem;
+      padding-left: 5rem;
+      padding-bottom: 1rem;
     }
+    
   }
 
   #brand {
     padding-top: 20px;
     padding-left: 30px;
     width: 55px;
+  }
+
+  .sticky {
+    position: fixed;
   }
 
   ${up("tablet")} {
@@ -239,15 +244,15 @@ const Container = styled.header`
   }
 
   nav {
-    // display: inline-block;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
     position: fixed;
     left: 0%;
     padding-bottom: 2%;
     width: 100%;
     background-color: ${theme.colors.primary};
+    opacity: 95%;
+    z-index: 2;
     
     img {
       display: flex;
@@ -258,7 +263,7 @@ const Container = styled.header`
       display: flex;
       position: relative;
       background-color: transparent;
-      margin-bottom: 100px;
+      // margin-bottom: 100px;
     }
     
   }
@@ -309,6 +314,7 @@ const Hero = styled.section`
     align-items: center;
     justify-content: center;
     grid-gap: 10px;
+    margin-top: 0;
 
     h1 {
       grid-area: title;
