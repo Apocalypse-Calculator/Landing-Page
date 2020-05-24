@@ -36,7 +36,7 @@ const Home = () => (
     <ContactUs />
     <Footer />
 
-    <script src="./scripts.js"></script>
+    {/* <script src="./scripts.js"></script> */}
   </Page>
 );
 
