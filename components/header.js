@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
@@ -10,41 +10,6 @@ import {
 } from "../styles/parts";
 
 const Header = () => {
-  // const MobileNavigation = () => {
-  //   const [isOpen, setIsOpen] = useState(false);
-
-  //   const openMenu = () => {
-  //     setIsOpen(true);
-  //   };
-
-  //   const closeMenu = () => {
-  //     setIsOpen(false);
-  //   };
-
-  //   if (isOpen) {
-  //     return (
-  //       <ul className="mobileNavigationStyling">
-  //         <button className="mobileNavigation" onClick={closeMenu}>
-  //           X
-  //         </button>
-  //         <NavigationItems closeMenu={closeMenu} />
-  //       </ul>
-  //     );
-  //   } else {
-  //     return (
-  //       // <button className="mobileNavigation" onClick={openMenu}>
-  //       //   ☰
-  //       // </button>
-  //       <div className="mobileNavigation">
-  //         <input type="checkbox" />
-  //         <div className="bar1"></div>
-  //         <div className="bar2"></div>
-  //         <div className="bar3"></div>
-  //       </div>
-  //     );
-  //   }
-  // };
-
   return (
     <Container>
       <nav>
@@ -201,7 +166,6 @@ const Container = styled.header`
     text-align: left;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
-    // transform-origin: top left;
     transform: translate(-85%, -130%);
     transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1);
     z-index: -2;
