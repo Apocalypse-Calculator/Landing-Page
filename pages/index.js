@@ -35,8 +35,6 @@ const Home = () => (
     <OurTeam />
     <ContactUs />
     <Footer />
-
-    {/* <script src="./scripts.js"></script> */}
   </Page>
 );
 
