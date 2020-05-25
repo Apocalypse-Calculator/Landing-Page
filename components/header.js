@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { up } from "styled-breakpoints";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
@@ -10,35 +10,6 @@ import {
 } from "../styles/parts";
 
 const Header = () => {
-  const MobileNavigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const openMenu = () => {
-      setIsOpen(true);
-    };
-
-    const closeMenu = () => {
-      setIsOpen(false);
-    };
-
-    if (isOpen) {
-      return (
-        <ul className="mobileNavigationStyling">
-          <button className="mobileNavigation" onClick={closeMenu}>
-            X
-          </button>
-          <NavigationItems closeMenu={closeMenu} />
-        </ul>
-      );
-    } else {
-      return (
-        <button className="mobileNavigation" onClick={openMenu}>
-          ☰
-        </button>
-      );
-    }
-  };
-
   return (
     <Container>
       <nav>
@@ -49,13 +20,33 @@ const Header = () => {
         </div>
 
         <DesktopNavigationWrapper>
-          <ul>
-            <NavigationItems />
-          </ul>
+          <NavigationItems />
         </DesktopNavigationWrapper>
 
         <MobileNavigationWrapper>
-          <MobileNavigation />
+          {/* <MobileNavigation /> */}
+          <div className="mobileNav">
+            <input type="checkbox" />
+            {/* hamburger icon */}
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+
+            <ul id="menu">
+              <a href="#about">
+                <li>ABOUT</li>
+              </a>
+              <a href="#how-to-use">
+                <li>HOW TO USE</li>
+              </a>
+              <a href="#download">
+                <li>DOWNLOAD</li>
+              </a>
+              <a href="#contact-us">
+                <li>CONTACT US</li>
+              </a>
+            </ul>
+          </div>
         </MobileNavigationWrapper>
       </nav>
 
@@ -73,10 +64,13 @@ const Header = () => {
             <Button disable>Coming Soon</Button>
           </div>
           <div>
-            <a href='https://play.google.com/store/apps/details?id=com.zachl.restock'>
-            <img src="/images/android_light.png" alt="" />
+            <a href="https://play.google.com/store/apps/details?id=com.zachl.restock">
+              <img src="/images/android_light.png" alt="" />
             </a>
-            <Button as="a" href="https://play.google.com/store/apps/details?id=com.zachl.restock">
+            <Button
+              as="a"
+              href="https://play.google.com/store/apps/details?id=com.zachl.restock"
+            >
               Download
             </Button>
           </div>
@@ -94,32 +88,109 @@ const Container = styled.header`
   padding: 10% 24px 30px 24px;
   margin-top: -10%;
   position: relative;
-  z-index: 10;
+  // z-index: 10;
 
-  .mobileNavigation {
-    color: #fff;
-    font-size: 34px;
-    margin-top: 10px;
-    justify-content: right;
+  // hamburger icon container
+  .mobileNav {
+    display: inline-block;
+    cursor: pointer;
+    margin: -2rem 1rem;
+    float: right;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+
+    // checkbox to assist hamburger icon
+    input {
+      display: inline-block;
+      width: 42px;
+      height: 32px;
+      position: absolute;
+      float: right;
+      // top: -4px;
+      // left -4px;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      // place hidden checkbox over hamburger icon
+      z-index: 3;
+      opacity: 0;
+
+      &:checked ~ .bar1 {
+        transform: rotate(-45deg) translate(-16px, 13px);
+      }
+
+      &:checked ~ .bar2 {
+        opacity: 0;
+      }
+      
+      &:checked ~ .bar3 {
+        transform: rotate(45deg) translate(-16px, -13px);
+      }
+
+      &:checked ~ #menu {
+        transform: translate(-85%, 5%);
+      }
+    }
+
+    // hamburger icon
+    .bar1, .bar2, .bar3 {
+      display: block;
+      width: 32px;
+      height: 4px;
+      position: relative;
+      background-color: #fff;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      z-index: 1;
+      transition: transform .4s cubic-bezier(0.77, 0.2, 0.05, 1), opacity .4s ease;
+    }
+
+    .bar1 {
+      transform-origin: 0% 0%;
+    }
+
+    .bar3 {
+      transform-origin: 0% 100%;
+    }
   }
 
-  .mobileNavigationStyling {
-    background: ${theme.colors.primary};
-    position: fixed; 
-    top: -20px; 
-    left: 20px;
-    right: 0;
-    bottom: 250px;
-    overflow: hidden;
-    z-index: 10;
-    border-radius: 5px;
+  #menu {
+    position: absolute;
+    width: 110vw;
+    margin-top: -10px;
+    float: left;
+    padding: 20px;
+    background-color: ${theme.colors.primary};
+    opacity: 98%;
+    border-radius: 10px;
+    text-align: left;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform: translate(-85%, -130%);
+    transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    z-index: -2;
+    
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+    }
 
+    li {
+      padding-left: 5rem;
+      padding-bottom: 1rem;
+    }
+    
   }
 
   #brand {
     padding-top: 20px;
     padding-left: 30px;
     width: 55px;
+  }
+
+  .sticky {
+    position: fixed;
   }
 
   ${up("tablet")} {
@@ -137,18 +208,31 @@ const Container = styled.header`
   }
 
   nav {
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
-
-
+    position: fixed;
+    left: 0%;
+    padding-bottom: 2%;
+    width: 100%;
+    background-color: ${theme.colors.primary};
+    opacity: 95%;
+    z-index: 2;
+    
     img {
+      display: flex;
       width: 90px;
     }
-  }
 
-    ul {
+    ${up("tablet")} {
+      display: flex;
+      position: relative;
+      background-color: transparent;
+      // margin-bottom: 100px;
+    }
+    
+  }
+  
+  ul {
       list-style: none;
       padding: 0;
       text-align: right;
@@ -184,6 +268,7 @@ const Container = styled.header`
 const Hero = styled.section`
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 4.5rem;
 
   ${up("tablet")} {
     display: grid;
@@ -193,6 +278,7 @@ const Hero = styled.section`
     align-items: center;
     justify-content: center;
     grid-gap: 10px;
+    margin-top: 0;
 
     h1 {
       grid-area: title;
