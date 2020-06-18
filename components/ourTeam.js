@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { up } from 'styled-breakpoints';
-import { theme } from '../styles/theme';
+import styled from "styled-components";
+import { up } from "styled-breakpoints";
+import { theme } from "../styles/theme";
 
 const OurTeam = () => (
-  <Container id='our-team'>
+  <Container id="our-team">
     <h2>Our team</h2>
     <ul>
       <li>Roland Zonai</li>
@@ -28,6 +28,7 @@ const OurTeam = () => (
       <li>Mina Ky</li>
       <li>Alex Bray</li>
       <li>Emily Dong</li>
+      <li>Jasmine Woo</li>
     </ul>
   </Container>
 );
@@ -43,10 +44,10 @@ const Container = styled.section`
   padding-top: 100px;
   padding-bottom: 100px;
 
-  ${up('tablet')} {
-  font-size: 1.5em;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  ${up("tablet")} {
+    font-size: 1.5em;
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 
   h2 {
