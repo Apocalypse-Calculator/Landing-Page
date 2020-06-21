@@ -28,6 +28,7 @@ const OurTeam = () => (
       <li>Mina Ky</li>
       <li>Alex Bray</li>
       <li>Emily Dong</li>
+      <li>Nick Oelsner</li>
       <li>Jasmine Woo</li>
     </ul>
   </Container>
